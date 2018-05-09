@@ -5,9 +5,16 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import {DeepLinkConfig, DeepLinkMetadata} from 'ionic-angular/navigation/nav-util';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+export const deepLinkConfig: DeepLinkConfig = {
+  links: [
+    { component: HomePage, name: 'Home Page', segment: 'home' },
+    { component: ListPage, name: 'Second Page', segment: 'list'},
+  ]
+};
 
 @NgModule({
   declarations: [
