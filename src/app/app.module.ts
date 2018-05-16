@@ -9,6 +9,8 @@ import {DeepLinkConfig, DeepLinkMetadata} from 'ionic-angular/navigation/nav-uti
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { QuartosComponent } from '../components/quartos/quartos';
+
 export const deepLinkConfig: DeepLinkConfig = {
   links: [
     { component: HomePage, name: 'Home Page', segment: 'home' },
@@ -20,7 +22,8 @@ export const deepLinkConfig: DeepLinkConfig = {
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    QuartosComponent
   ],
   imports: [
     BrowserModule,
