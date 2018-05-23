@@ -1,4 +1,7 @@
 import { Component, AnimationKeyframe } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { AcomodacaoPage } from '../../pages/acomodacao/acomodacao';
+import { Acomodacao } from '../../modelos/acomodacao';
 
 /**
  * Generated class for the QuartosComponent component.
@@ -12,14 +15,31 @@ import { Component, AnimationKeyframe } from '@angular/core';
 })
 export class QuartosComponent {
 
-  acomodacao: any;
+  acomodacao: Acomodacao[];
 
-  constructor() {
-    this.acomodacao={
-      name:"Quarto 107",
-        disp: true  
-    }
+
+  constructor(public navCtrl: NavController) {
+
+    this.acomodacao=[
+    {descricao: '01', hospede: 'Joao', status:true},
+    {descricao: '02', hospede: 'Cristina', status:true},
+    {descricao: '03', hospede: null, status:false},
     
+    ];
+   
+
+
+  }
+ 
+
+selecionaAcomo(acomodacao){
+  console.log(acomodacao);
+  this.navCtrl.push(AcomodacaoPage.name, {quartoSelecionado: acomodacao});
   }
 
+ verificaStatus(acomodacao){
+  acomodacao.status ? 
+  acomodacao.hospede = 'Ocupado por: ' + acomodacao.hospede:
+  acomodacao.hospede = 'Livre!';
+ }  
 }

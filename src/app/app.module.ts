@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { QuartosComponent } from '../components/quartos/quartos';
 
+
 export const deepLinkConfig: DeepLinkConfig = {
   links: [
     { component: HomePage, name: 'Home Page', segment: 'home' },
@@ -33,7 +34,8 @@ export const deepLinkConfig: DeepLinkConfig = {
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    QuartosComponent
   ],
   providers: [
     StatusBar,

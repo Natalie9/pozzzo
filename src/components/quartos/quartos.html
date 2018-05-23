@@ -1,12 +1,16 @@
 <!-- Generated template for the QuartosComponent component -->
-<ion-card>
+<ion-card *ngFor="let acomodacao of acomodacao" (click)="selecionaAcomo(acomodacao)">
   <ion-card-header>
-    {{acomodacao.name}}
+    Quarto {{acomodacao.descricao}}
   </ion-card-header>
   <ion-card-content>
       <ion-item>
-          <ion-label>Disponível</ion-label>
-          <ion-toggle value="foo" checked="true"></ion-toggle>
+        
+          <ion-label *ngIf="acomodacao.status">Hóspede: {{acomodacao.hospede}}</ion-label>
+          <ion-label *ngIf="!acomodacao.status">Livre</ion-label>
+         
+          <!--adicionar um else pra mostrar que está disponível-->
+
         </ion-item>
   </ion-card-content>
 </ion-card>

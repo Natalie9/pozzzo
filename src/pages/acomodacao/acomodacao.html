@@ -1,0 +1,28 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Acomodação</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h2>Quarto {{acomodacao.descricao}}</h2>
+
+  <!--<form>
+      <ion-item>
+        <ion-label stacked>Nome do hospede</ion-label>
+        <ion-input  name="hospede">{{acomodacao.hospede}}</ion-input>
+        <ion-item>{{acomodacao.hospede}}</item>on-i
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Disponível: </ion-label>
+          <ion-toggle  #toggle (ionChange)="atualizaStatus(toggle.checked, acomodacao)"></ion-toggle>
+        </ion-item>
+    </form>-->
+<ion-item> {{acomodacao.hospede}} </ion-item>
+<ion-item> {{acomodacao.status}} </ion-item>
+<ion-toggle  #toggle (ionChange)="atualizaStatus(toggle.checked, acomodacao)" ></ion-toggle>
+</ion-content>
